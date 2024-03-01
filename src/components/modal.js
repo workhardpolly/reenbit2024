@@ -52,7 +52,9 @@ export default function Modal() {
         </div>
 
         <form className="modal-form" onSubmit={handleSubmit}>
+          <p>* City: </p>
           <select
+            required
             className="modal-citieslist-dropdown"
             onChange={(e) => {
               return setNewTrip({ ...newTrip, ...JSON.parse(e.target.value) });
@@ -67,9 +69,11 @@ export default function Modal() {
               );
             })}
           </select>
-          <div>
-            <label htmlFor="startTripDate">Start date:</label> <br />
+          <div className="modal-start-date">
+            <label htmlFor="startTripDate">* Start date:</label>
+            <br />
             <input
+              required
               type="date"
               id="startTripDate"
               min={minDate}
@@ -77,10 +81,11 @@ export default function Modal() {
               onChange={(e) => setNewTrip({ ...newTrip, tripStarts: e.target.value })}
             />
           </div>
-          <div>
-            <label htmlFor="endTripDate">End date:</label>
+          <div className="modal-end-date">
+            <label htmlFor="endTripDate">* End date:</label>
             <br />
             <input
+              required
               type="date"
               id="endTripDate"
               min={newTrip.tripStarts ? newTrip.tripStarts : minDate}
@@ -93,7 +98,7 @@ export default function Modal() {
 
           <div className="modal-footer">
             <button onClick={() => dispatch(hideAddTripModal())}>Close</button>
-            <button disabled={false} onClick={handleSubmit}>
+            <button className="modal-form-send" disabled={false} onClick={handleSubmit}>
               Save
             </button>
           </div>
