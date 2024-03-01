@@ -98,7 +98,10 @@ export default function Modal() {
 
           <div className="modal-footer">
             <button onClick={() => dispatch(hideAddTripModal())}>Close</button>
-            <button className="modal-form-send" disabled={false} onClick={handleSubmit}>
+            <button
+              className="modal-form-send"
+              disabled={!newTrip.tripStarts || !newTrip.tripEnds || !newTrip.cityName ? true : false}
+              onClick={handleSubmit}>
               Save
             </button>
           </div>
