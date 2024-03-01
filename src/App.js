@@ -1,23 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
+import Search from './components/search';
+import DayForecastView from './components/dayForecastView';
+import Modal from './components/modal';
+import WeekForecastView from './components/weekForecastView';
+import CitiesList from './components/cities';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="main-content">
+        <h1>
+          Weather <b>Forecast</b>
+        </h1>
+
+        <Search />
+        <CitiesList />
+        <WeekForecastView />
+      </div>
+      <div className="side-block">
+        <DayForecastView />
+      </div>
+      <Modal />
     </div>
   );
 }

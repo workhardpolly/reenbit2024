@@ -1,38 +1,199 @@
 .App {
+  text-align: left;
+  display: flex;
+  margin: 5px;
+}
+
+.main-content {
+  flex: 0 1 auto;
+  margin-left: 20px;
+  width: 60%;
+}
+
+.side-block {
+  position: fixed;
+  width: 40%;
+  top: 0px;
+  left: 60%;
+  flex: 0 0 30vw;
+  height: 99.7vh;
+  background: center / cover no-repeat url('./img/bacground-forecast-day.avif');
+}
+
+.search-wrapper {
+  margin: 20px 0;
+}
+
+.search-input {
+  background: rgba(0, 0, 0, 0.04) 4px 50% / 15px 15px no-repeat url('./img/search-icon.svg');
+  padding-left: 25px;
+  width: 30%;
+  height: 25px;
+  min-width: 200px;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+  border: none;
+}
+
+.cards {
+  display: flex;
+  width: 90%;
+  height: 40vh;
+  overflow-x: auto;
+  overflow-y: hidden;
+  justify-content: flex-start;
+  scrollbar-color: rgba(0, 0, 0, 0.8) rgba(0, 0, 0, 0.5);
+  scrollbar-width: thin;
+}
+
+.city-card {
+  flex: 0 1 40%;
+  min-width: 200px;
+  margin: 10px 20px 10px 0;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+}
+
+.city-card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.city-card-picture {
+  width: 100%;
+  height: 50%;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+.city-info {
+  font-size: 0.5em;
+  padding: 5px;
+  width: 100%;
+  height: 50%;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+.add-trip {
+  flex: 0 1 40%;
+  min-width: 200px;
+  margin: 10px 20px 10px 0;
+  text-align: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+}
+
+.add-trip:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.day-weather-box {
+  display: flex;
+  flex-direction: column;
+  height: 300px;
+  text-align: center;
+  justify-content: center;
+}
+
+.day-weather-box-day {
+  font-size: 1.3em;
+}
+
+.day-weather-box-temp {
+  font-size: 2em;
+  font-weight: 700;
+}
+.day-weather-box-temp span {
+  font-size: 0.6em;
+  vertical-align: text-top;
+}
+
+.countdown {
+  display: flex;
+  margin: 0px 10px;
+  font-size: 0.5em;
+}
+
+.countdown * {
+  padding: 0px 5px;
+  flex: 0 1 25%;
+}
+
+.trip-weather-container {
+  width: 95%;
+  margin: 5px;
+  border: #282c34 solid 1px;
+  display: flex;
+  flex-wrap: wrap;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.trip-weather-card {
+  flex: 0 0 16%;
+  margin: 1px;
+  border: 1px solid black;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.modal-addtrip {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.5);
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  animation-name: appear;
+  animation-duration: 0.3s;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
+@keyframes appear {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
   }
   to {
-    transform: rotate(360deg);
+    opacity: 1;
   }
+}
+
+.modal-content {
+  width: 100%;
+  max-width: 550px;
+  background: white;
+  position: relative;
+  margin: 0 20px;
+  max-height: calc(100vh - 40px);
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation-name: slide-in;
+  animation-duration: 0.5s;
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateY(-150px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.modal-close {
+  padding: 1rem;
+  margin: -1rem -1rem -1rem auto;
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.6);
 }
