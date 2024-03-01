@@ -11,8 +11,8 @@ export default function citiesDefaultList() {
         cityName: 'Kyiv',
         cityPicture:
           'https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/17-07-02-Maidan_Nezalezhnosti_RR74377-PANORAMA.jpg/1024px-17-07-02-Maidan_Nezalezhnosti_RR74377-PANORAMA.jpg',
-        tripStarts: '2024-02-29',
-        tripEnds: '2024-03-01',
+        tripStarts: '2024-03-02',
+        tripEnds: '2024-03-04',
       },
       {
         cityName: 'London',

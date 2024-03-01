@@ -9,6 +9,7 @@ export default function WeekForecastView() {
   const [processData, setProcessData] = React.useState(null);
   const weekday = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
   let renderData = '';
+  console.dir(processData);
 
   React.useEffect(() => {
     const url = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${city}/${tripStartDate}/${tripEndDate}?unitGroup=metric&include=days&key=${process.env.REACT_APP_WEATHER_KEY}&contentType=json`;
@@ -24,8 +25,12 @@ export default function WeekForecastView() {
     renderData = processData.days.map((day) => {
       return (
         <div key={day.datetime} className="trip-weather-card">
-          <h6 className="trip-weather-day">{weekday[new Date(day.datetime).getDay()]}</h6>
-          <div className="trip-weather-icon"></div>
+          <div className="trip-weather-day">{weekday[new Date(day.datetime).getDay()]}</div>
+
+          <img
+            className="trip-weather-icon"
+            src={`https://github.com/visualcrossing/WeatherIcons/blob/main/PNG/1st%20Set%20-%20Color/${day.icon}.png?raw=true`}></img>
+
           <div className="trip-weather-day-temp">
             {day.tempmax} / {day.tempmin}
           </div>

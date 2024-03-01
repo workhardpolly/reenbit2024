@@ -3,7 +3,7 @@ import Search from './components/search';
 import DayForecastView from './components/dayForecastView';
 import Modal from './components/modal';
 import WeekForecastView from './components/weekForecastView';
-import CitiesList from './components/cities';
+import CitiesCards from './components/citiesCards';
 
 function App() {
   return (
@@ -14,7 +14,7 @@ function App() {
         </h1>
 
         <Search />
-        <CitiesList />
+        <CitiesCards />
         <WeekForecastView />
       </div>
       <div className="side-block">

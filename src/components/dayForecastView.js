@@ -26,20 +26,24 @@ export default function DayForecastView() {
     let dayData = processData.days[0];
     // console.dir(processData);
     renderData = (
-      <div className="day-weather-box">
-        <h3 className="day-weather-box-day">{weekday[new Date(dayData.datetime).getDay()]}</h3>
-        <div className="day-weather-item">
-          <div className="day-weather-box-icon"></div>
-          <div className="day-weather-box-temp">
-            {dayData.temp}
-            <span>°C</span>
+      <>
+        <div className="day-weather-box">
+          <h3 className="day-weather-box-day">{weekday[new Date(dayData.datetime).getDay()]}</h3>
+          <div className="day-weather-item">
+            <img
+              className="day-weather-box-icon"
+              src={`https://github.com/visualcrossing/WeatherIcons/blob/main/PNG/1st%20Set%20-%20Color/${dayData.icon}.png?raw=true`}></img>
+
+            <div className="day-weather-box-temp">
+              {dayData.temp}
+              <span>°C</span>
+            </div>
           </div>
+
+          <div className="day-weather-box-city">{processData.address}</div>
         </div>
-
-        <h4 className="day-weather-box-city">{processData.address}</h4>
-
         <CountDown />
-      </div>
+      </>
     );
   }
 

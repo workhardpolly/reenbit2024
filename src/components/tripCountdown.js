@@ -26,7 +26,7 @@ export default function CountDown() {
   let timer = getReturnValues(countDown);
 
   return (
-    <>
+    <div className="countdown-wrapper">
       <div className="countdown">
         <div className="countdown-days">
           <p>{timer.days > 0 ? timer.days : 0}</p> <p>DAYS</p>
@@ -41,7 +41,7 @@ export default function CountDown() {
           <p>{timer.seconds > 0 ? timer.seconds : 0}</p> <p>SECONDS</p>
         </div>
       </div>
-      <div>{timer.seconds < 0 ? 'Trip has passed' : null}</div>
-    </>
+      <div className="countdown-message">{timer.seconds < 0 ? 'Trip has passed' : null}</div>
+    </div>
   );
 }

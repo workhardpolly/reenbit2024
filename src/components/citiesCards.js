@@ -1,9 +1,9 @@
 import { useDispatch, useSelector } from 'react-redux';
 
 import { changeCurrentCity } from '../redux/actions/changeCurrentCity';
-import { showAddTripModal } from './../redux/actions/toggleAddTripModal';
+import { showAddTripModal } from '../redux/actions/toggleAddTripModal';
 
-export default function CitiesList() {
+export default function CitiesCards() {
   const dispatch = useDispatch();
   const allTrips = useSelector((state) => state.citiesListReducer);
   const searchValue = useSelector((state) => state.searchReducer);
@@ -37,8 +37,8 @@ export default function CitiesList() {
               }}>
               <img className="city-card-picture" src={city.cityPicture} alt={city.cityName}></img>
               <div className="city-info">
-                <h4>{city.cityName}</h4>
-                <p>
+                <div className="city-info-name">{city.cityName}</div>
+                <p className="city-card-date">
                   {city.tripStarts} - {city.tripEnds}
                 </p>
               </div>
