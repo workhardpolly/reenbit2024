@@ -100,7 +100,11 @@ export default function Modal() {
             <button onClick={() => dispatch(hideAddTripModal())}>Close</button>
             <button
               className="modal-form-send"
-              disabled={!newTrip.tripStarts || !newTrip.tripEnds || !newTrip.cityName ? true : false}
+              disabled={
+                !newTrip.tripStarts || !newTrip.tripEnds || !newTrip.cityName || newTrip.tripEnds < newTrip.tripStarts
+                  ? true
+                  : false
+              }
               onClick={handleSubmit}>
               Save
             </button>

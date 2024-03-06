@@ -19,7 +19,7 @@ export default function WeekForecastView() {
       .then((data) => setProcessData(data))
       .catch((e) => console.log(e));
     return;
-  }, [city]);
+  }, [city, tripStartDate, tripEndDate]);
 
   if (processData) {
     renderData = processData.days.map((day) => {
@@ -29,6 +29,7 @@ export default function WeekForecastView() {
 
           <img
             className="trip-weather-icon"
+            alt={day.icon}
             src={`https://github.com/visualcrossing/WeatherIcons/blob/main/PNG/1st%20Set%20-%20Color/${day.icon}.png?raw=true`}></img>
 
           <div className="trip-weather-day-temp">
