@@ -4,6 +4,7 @@ import DayForecastView from './components/dayForecastView';
 import Modal from './components/modal';
 import WeekForecastView from './components/weekForecastView';
 import CitiesCards from './components/citiesCards';
+import GoogleLogin from './components/GoogleLogin';
 
 function App() {
   return (
@@ -12,12 +13,12 @@ function App() {
         <h1>
           Weather <b>Forecast</b>
         </h1>
-
         <Search />
         <CitiesCards />
         <WeekForecastView />
       </div>
       <div className="side-block">
+        <GoogleLogin />
         <DayForecastView />
       </div>
       <Modal />
