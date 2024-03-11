@@ -1,9 +1,11 @@
 import './App.css';
+
 import Search from './components/search';
 import DayForecastView from './components/dayForecastView';
 import Modal from './components/modal';
 import WeekForecastView from './components/weekForecastView';
 import CitiesCards from './components/citiesCards';
+import Auth from './components/auth';
 
 function App() {
   return (
@@ -18,6 +20,7 @@ function App() {
         <WeekForecastView />
       </div>
       <div className="side-block">
+        <Auth />
         <DayForecastView />
       </div>
       <Modal />

@@ -1,7 +1,6 @@
 .App {
   text-align: left;
   display: flex;
-  margin: 5px;
 }
 
 .main-content {
@@ -21,6 +20,29 @@
   background: center / cover no-repeat url('./img/bacground-forecast-day.avif');
 }
 
+.user-data-wrapper {
+  font-size: 0.8em;
+  position: relative;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  margin: 10px 10px;
+}
+
+.login-button {
+  align-self: flex-end;
+}
+
+.user-data-content {
+  position: absolute;
+  left: 80%;
+}
+
+.user-data-avatar {
+  width: 100%;
+  border-radius: 1000px;
+}
+
 .search-wrapper {
   margin: 20px 0;
 }
@@ -36,6 +58,24 @@
   border: none;
 }
 
+.city-cards-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.city-cards-scrollBtn {
+  -moz-user-select: -moz-none;
+  -o-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  flex: 0 1 45%;
+  height: 20px;
+  font-size: 1.2em;
+  cursor: pointer;
+  text-align: center;
+}
+
 .cards {
   display: flex;
   width: 90%;
@@ -45,6 +85,7 @@
   justify-content: flex-start;
   scrollbar-color: rgba(0, 0, 0, 0.8) rgba(0, 0, 0, 0.5);
   scrollbar-width: thin;
+  scroll-behavior: smooth;
 }
 
 .city-card {
