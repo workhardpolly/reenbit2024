@@ -3,7 +3,7 @@ export default function citiesDefaultList() {
 
   const lsCitiesList = JSON.parse(window.localStorage.getItem('tripCitiesList'));
 
-  if (lsCitiesList) {
+  if (Object(lsCitiesList).length > 0) {
     citiesDefaultList = lsCitiesList;
   } else {
     citiesDefaultList = [
