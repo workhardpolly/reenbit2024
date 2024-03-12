@@ -150,18 +150,29 @@
   font-size: 1.7em;
 }
 
-.day-weather-item * {
-  display: inline;
-  margin: 0 5px 0 5px;
+.day-weather-item {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
 }
 
+/* .day-weather-item * {
+  display: inline;
+  margin: 0 5px 0 5px;
+} */
+
 .day-weather-box-icon {
+  margin: 0 5px 0 5px;
   height: 80%;
+  text-align: right;
+
+  /* margin-top: 10px; */
 }
 
 .day-weather-box-temp {
-  font-size: 2em;
-  font-weight: 700;
+  font-size: 3em;
+  font-weight: 400;
+  text-align: left;
 }
 
 .day-weather-box-temp span {
@@ -203,18 +214,31 @@
 .trip-weather-container {
   width: 90%;
   margin: 5px;
-  /* border: #282c34 solid 1px; */
+
+  display: grid;
+  grid-template: auto/ repeat(auto-fill, minmax(100px, 1fr));
+}
+
+/* .trip-weather-container {
+  width: 90%;
+  margin: 5px;
+
   display: flex;
   flex-wrap: wrap;
   text-align: center;
-}
+} */
 
 .trip-weather-card {
-  flex: 0 0 20%;
+  text-align: center;
   margin: 10px;
-  /* border: 1px solid black; */
   min-height: 15vh;
 }
+
+/* .trip-weather-card {
+  flex: 0 0 20%;
+  margin: 10px;
+  min-height: 15vh;
+} */
 
 .trip-weather-day {
   color: rgba(0, 0, 0, 0.7);

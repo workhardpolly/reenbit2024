@@ -9,7 +9,6 @@ export default function WeekForecastView() {
   const [processData, setProcessData] = React.useState(null);
   const weekday = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
   let renderData = '';
-  console.dir(processData);
 
   React.useEffect(() => {
     const url = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${city}/${tripStartDate}/${tripEndDate}?unitGroup=metric&include=days&key=${process.env.REACT_APP_WEATHER_KEY}&contentType=json`;

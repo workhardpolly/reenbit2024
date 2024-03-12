@@ -14,7 +14,19 @@ export default function CitiesCards() {
     return trip.cityName.toLowerCase().includes(searchValue.toLowerCase());
   });
 
-  const renderList = searchValue ? filteredTrips : allTrips;
+  // Definition and sorting items to render in cities list
+
+  const renderList = (searchValue ? filteredTrips : allTrips).sort((itemA, itemB) => {
+    let cA = itemA.cityName.toLowerCase();
+    let cB = itemB.cityName.toLowerCase();
+
+    if (cA < cB) {
+      return -1;
+    } else if (cA > cB) {
+      return 1;
+    }
+    return 0;
+  });
 
   const scroll = (scrollOffset) => {
     scrollRef.current.scrollLeft += scrollOffset;
@@ -23,10 +35,6 @@ export default function CitiesCards() {
   const cityCards = (cities) => {
     return (
       <div className="cards" ref={scrollRef}>
-        <div className="add-trip" onClick={() => dispatch(showAddTripModal())}>
-          <p>&#10010;</p>
-          <p>Add trip</p>
-        </div>
         {cities.map((city) => {
           return (
             <div
@@ -51,6 +59,10 @@ export default function CitiesCards() {
             </div>
           );
         })}
+        <div className="add-trip" onClick={() => dispatch(showAddTripModal())}>
+          <p>&#10010;</p>
+          <p>Add trip</p>
+        </div>
       </div>
     );
   };

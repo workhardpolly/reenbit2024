@@ -30,10 +30,10 @@ export default function DayForecastView() {
         <div className="day-weather-box">
           <h3 className="day-weather-box-day">{weekday[new Date(dayData.datetime).getDay()]}</h3>
           <div className="day-weather-item">
-            <img
-              className="day-weather-box-icon"
-              src={`https://github.com/visualcrossing/WeatherIcons/blob/main/PNG/1st%20Set%20-%20Color/${dayData.icon}.png?raw=true`}></img>
-
+            <div className="day-weather-box-icon">
+              <img
+                src={`https://github.com/visualcrossing/WeatherIcons/blob/main/PNG/1st%20Set%20-%20Color/${dayData.icon}.png?raw=true`}></img>
+            </div>
             <div className="day-weather-box-temp">
               {dayData.temp}
               <span>°C</span>
