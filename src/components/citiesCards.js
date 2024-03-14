@@ -41,7 +41,8 @@ export default function CitiesCards() {
             <div
               key={city.cityName + city.tripStarts + city.tripEnds}
               className="city-card"
-              onClick={() => {
+              onClick={(e) => {
+                e.stopPropagation();
                 dispatch(
                   changeCurrentCity({
                     cityName: city.cityName,
@@ -75,7 +76,7 @@ export default function CitiesCards() {
             </div>
           );
         })}
-        <div className="add-trip" onClick={() => dispatch(showAddTripModal())}>
+        <div className="add-trip" role="button" onClick={() => dispatch(showAddTripModal())}>
           <p>&#10010;</p>
           <p>Add trip</p>
         </div>
